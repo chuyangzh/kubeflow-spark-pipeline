@@ -1,0 +1,23 @@
+# PIPELINE DEFINITION
+# Name: spark-weather-pipeline
+# Description: A pipeline that runs a Spark job to process weather data.
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: spark-weather-pipeline-
+  namespace: kubeflow
+spec:
+  entrypoint: spark-weather-pipeline
+  templates:
+  - name: spark-weather-pipeline
+    dag:
+      tasks:
+      - name: spark-weather-job
+        template: spark-job
+  - name: spark-job
+    container:
+      image: zcycyrus/spark-weather-job:latest  # Updated image
+      command:
+      - spark-submit
+      - /app/spark-job.py
+

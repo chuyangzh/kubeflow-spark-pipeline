@@ -1,0 +1,30 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore local virtual environments
+env/
+venv/
+.Python
+
+# Ignore Python package metadata and logs
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore temporary files and logs
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+
+# Operating system and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
